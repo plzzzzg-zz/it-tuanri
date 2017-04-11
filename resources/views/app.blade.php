@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>报名</title>
+    {{--<title>报名</title>--}}
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -86,9 +86,9 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{url('/material')}}">报名</a>
+            <a class="navbar-brand" href="{{url('/signup')}}">报名</a>
         </div>
-        <a class="pull-right btn btn-default" style="margin-top: 8px;" href="{{url("yiban/oauth")}}" id="login">易班登录</a>
+{{--        <a class="pull-right btn btn-default" style="margin-top: 8px;" href="{{url("yiban/oauth")}}" id="login">易班登录</a>--}}
         @yield('search')
     </div>
 </nav>

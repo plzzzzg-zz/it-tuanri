@@ -1,6 +1,7 @@
 @extends('app')
 @section('js')
     <script type="text/javascript" src="{!! asset('js/jquery.cxselect.js') !!}"></script>
+    <title>报名</title>
 {{--@stop--}}
 @section('content')
     @if (count($errors) > 0)
@@ -23,7 +24,7 @@
     <!--- Content Field --->
     <div class="form-group">
         {!! Form::label('project_type', '作品类型:') !!}
-        {!! Form::select('project_type', ['web_static'=>'静态展示','qingyingyong'=>'轻应用','app'=>'APP'],null, ['class' => 'form-control']) !!}
+        {!! Form::select('project_type', ['静态展示'=>'静态展示','轻应用'=>'轻应用','App'=>'APP'],null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('group_type', '组队类型:') !!}
