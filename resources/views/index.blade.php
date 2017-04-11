@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{URL::asset('../node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"></script>
     <title>Laravel</title>
 
 </head>
