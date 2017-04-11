@@ -40,6 +40,13 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+
+        'yiban'=>[
+            \App\Http\Middleware\Yiban\recordUrl::class,
+            \App\Http\Middleware\Yiban\hasAccessToken::class,
+            \App\Http\Middleware\Yiban\checkAccessToken::class,
+            \App\Http\Middleware\Yiban\checkToken::class,
+        ],
     ];
 
     /**

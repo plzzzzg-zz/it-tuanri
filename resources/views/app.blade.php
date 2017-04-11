@@ -88,6 +88,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="{{url('/material')}}">报名</a>
         </div>
+        <a class="pull-right btn btn-default" style="margin-top: 8px;" href="{{url("yiban/oauth")}}" id="login">易班登录</a>
         @yield('search')
     </div>
 </nav>
