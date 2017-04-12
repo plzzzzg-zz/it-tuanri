@@ -43,7 +43,7 @@ class Controller extends BaseController
         $input['secret_key'] = str_random(6);
         $group = Group::create($input);
 
-        return redirect()->action('Controller@show',$group->id);
+        return redirect()->action('Controller@show',$group->id)->with('status','报名成功!<br>请记住下面的操作密码：<br>'.$group->secret_key);
     }
     public function show($id){
         $group = Group::findorfail($id);
@@ -81,6 +81,10 @@ class Controller extends BaseController
         $group = Group::findorfail($id);
         $request['secret_key']=$request['secret'];
         $group->update($request->all());
+        return redirect()->action('Controller@show',$group->id)->with('status','Data updated!');
+    }
+    public function search(Request $request){
+        $group = Group::where('leader_id',$request['id'])->firstOrFail();
         return redirect()->action('Controller@show',$group->id);
     }
 

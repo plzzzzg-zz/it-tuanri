@@ -79,15 +79,39 @@
         #footer:hover{
             color: #9BA2AB;
         }
+        .form_no_border{
+            border: none!important;
+        }
+        .m{
+            margin-top: 4px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
 {{--nav--}}
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{url('/signup')}}">报名</a>
+<nav class="navbar navbar-default" role="navigation" style="background:#369cf5">
+    <div class="container-fluid" >
+        <div class="navbar-header " >
+            <a class="navbar-brand" href="{{url('/signup')}}" style="padding-top: 7px;">
+                <img src="http://info.scau.edu.cn//front/img/logoTransparent.png" alt="" height="53px;">
+            </a>
         </div>
+        <div >
+            {!! Form::open(['url'=>'/search','class'=>'form_no_border navbar-form navbar-right ','role'=>'search']) !!}
+                <div class="input-group col-sm-8" style="margin-top:0px; height:47px;  positon:relative">
+                {!! Form::text('id',null,['class'=>'form-control m','placeholder'=>'请输入组长学号']) !!}
+                    {{--<button class="btn btn-default btn-sm" type="submit">Go!</button>--}}
+                <span class="input-group-btn" >
+                    <button class="btn btn_info btn_search btn-md">
+                        查找
+                    </button>
+                </span>
+                </div>
+
+
+            </div>
+            {!! Form::close() !!}
 {{--        <a class="pull-right btn btn-default" style="margin-top: 8px;" href="{{url("yiban/oauth")}}" id="login">易班登录</a>--}}
         @yield('search')
     </div>
