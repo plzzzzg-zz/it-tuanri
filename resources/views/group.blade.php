@@ -9,7 +9,8 @@
     <title>队伍信息</title>
 
 @section('content')
-    <h1>{{$group->project_name}}</h1>
+    <h1>{{$group->project_name}} <span class="pull-right"><a href="{!! url('/group/'.$group->id.'/edit') !!}"}><button class="btn" type="button" >前往修改
+    </button></a></span></h1>
     <hr>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -46,20 +47,20 @@
                 </div>
             </div>
 
-        {{--<br>--}}
-    {{--<h2>成员信息:</h2>--}}
-        {{--<hr>--}}
-        {{--<div class="panel panel-default">--}}
-            {{--<div class="panel-heading">--}}
-                {{--<h3 class="panel-title">--}}
-                    {{--{{$group->leader_name}}--}}
-                    {{--<span class="pull-right">{{$group->leader_id}}</span>--}}
-                {{--</h3>--}}
-            {{--</div>--}}
-            {{--<div class="panel-body">--}}
-                {{--{{$group->group_type}}--}}
-            {{--</div>--}}
-        {{--</div>--}}
+        <br>
+    <h2>成员信息:</h2>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{$group->leader_name}}
+                    <span class="pull-right">{{$group->leader_id}}</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                {{$group->group_type}}
+            </div>
+        </div>
         {{--<!--- Content Field --->--}}
         {{--<div class="form-group">--}}
             {{--{!! Form::label('leader_name', '姓名:') !!}--}}
@@ -193,8 +194,7 @@
 
 
 
-    <a href={!! action('Controller@edit',$group->id) !!}}></a><button class="btn " type="button" >前往修改
-    </button>
+
     {{Form::close()}}
 @stop
 @section('js-2')
@@ -235,6 +235,9 @@
             $('#group_info').slideToggle();
         }
         $(document).ready(function () {
+            alert(' 密码：{{$group->secret_key}} \n 请记住它，这是修改报名信息的凭据');
+
+
 //            $('#leader_college').filter()
             {{--document.getElementsByName('leader_college').value = "{{$group->leader_college}}";--}}
             //            $('#leader_college option:last').attr('selected',true);

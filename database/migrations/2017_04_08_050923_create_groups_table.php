@@ -50,7 +50,7 @@ class CreateGroupsTable extends Migration
             $table->integer('member_num');
             $table->integer('professional_member_num')->nullable();
             $table->integer('unprofessional_member_num')->nullable();
-            $table->string('secret-key');
+            $table->string('secret_key');
             $table->string('url')->nullable();
         });
     }

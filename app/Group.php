@@ -38,7 +38,7 @@ class Group extends Model
         'member_num',
         'professional_member_num',
         'unprofessional_member_num',
-        'secret-key',
+        'secret_key',
         'url',
 
     ];

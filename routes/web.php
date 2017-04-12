@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Route::get('/signup','Controller@signup');
 //Route::post('/store','Controller@store');
-//Route::get('/group/{id}','Controller@group');
+//Route::get('/group/{id}/edit','Controller@edit');
 
 Route::resource('group','Controller');
 

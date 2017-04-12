@@ -34,7 +34,7 @@
                 成员有一半或一半以上为IT类专业学生即算为专业组
             </div>
         </div>
-        {!! Form::select('group_type', ['professional'=>'专业组','unprofessional'=>'非专业组'],null, ['class' => 'form-control']) !!}
+        {!! Form::select('group_type', ['专业组'=>'专业组','非专业组'=>'非专业组'],null, ['class' => 'form-control']) !!}
     </div>
 
     <span id="leader">

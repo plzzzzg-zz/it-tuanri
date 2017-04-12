@@ -40,7 +40,7 @@ class Controller extends BaseController
         ],$message);
         $input = $request->all();
 
-        $input['secret-key'] = str_random(6);
+        $input['secret_key'] = str_random(6);
         $group = Group::create($input);
 
         return redirect()->action('Controller@show',$group->id);
@@ -62,7 +62,8 @@ class Controller extends BaseController
             'leader_major.required'=>'还没有选择专业',
             'leader_number.required'=>'留个电话呗',
             'leader_qq.required'=>'没有填QQ',
-            'leader_id.required'=>'告诉我们学号才能加分呀'
+            'leader_id.required'=>'告诉我们学号才能加分呀',
+            'secret'=>'操作密码不正确'
         ];
         $this->validate($request,[
             'leader_name'=>'required',
@@ -75,9 +76,10 @@ class Controller extends BaseController
             'project_name'=>'required',
             'group_type'=>'required',
             'member_num'=>'required',
-
+            'secret'=>'required',
         ],$message);
         $group = Group::findorfail($id);
+        $request['secret_key']=$request['secret'];
         $group->update($request->all());
         return redirect()->action('Controller@show',$group->id);
     }

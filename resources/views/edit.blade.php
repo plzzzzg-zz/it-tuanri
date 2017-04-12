@@ -173,7 +173,11 @@
         </span>
     @endif
 
-
+    <!--- Content Field --->
+    <div class="form-group">
+        {!! Form::label('secret', '修改密码:') !!}
+        {!! Form::text('secret', null, ['class' => 'form-control','value'=>'']) !!}
+    </div>
 
     <button class="btn " type="submit" >修改
     </button>
