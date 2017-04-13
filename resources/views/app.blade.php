@@ -98,7 +98,7 @@
             </a>
         </div>
         <div >
-            {!! Form::open(['url'=>'/search','class'=>'form_no_border navbar-form navbar-right ','role'=>'search']) !!}
+            {!! Form::open(['action'=>'Controller@search','class'=>'form_no_border navbar-form navbar-right ','role'=>'search']) !!}
                 <div class="input-group col-sm-8" style="margin-top:0px; height:47px;  positon:relative">
                 {!! Form::text('id',null,['class'=>'form-control m','placeholder'=>'请输入组长学号']) !!}
                     {{--<button class="btn btn-default btn-sm" type="submit">Go!</button>--}}

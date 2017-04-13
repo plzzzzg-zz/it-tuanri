@@ -13,6 +13,11 @@
             </ul>
         </div>
     @endif
+    @if (session('status'))
+        <div class="alert alert-success">
+            {!! session('status') !!}
+        </div>
+    @endif
     {{Form::open(['url'=>'/group'])}}
     {!! Form::label('member_num','队伍人数：') !!}
     {!! Form::select('member_num',['1'=>'1','2'=>'2','3'=>'3','4'=>'4'],'4',['class'=>'form-control','onchange'=>'change_form(this.value)']) !!}

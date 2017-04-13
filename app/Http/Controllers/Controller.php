@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use Doctrine\DBAL\Schema\View;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -84,8 +86,8 @@ class Controller extends BaseController
         return redirect()->action('Controller@show',$group->id)->with('status','Data updated!');
     }
     public function search(Request $request){
-        $group = Group::where('leader_id',$request['id'])->firstOrFail();
-        return redirect()->action('Controller@show',$group->id);
+            $group = Group::where('leader_id',$request['id'])->firstOrFail();
+            return redirect()->action('Controller@show',$group->id);
     }
 
 
