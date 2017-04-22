@@ -27,6 +27,18 @@ class Controller extends BaseController
             'leader_qq.required'=>'没有填QQ',
             'leader_id.required'=>'告诉我们学号才能加分呀'
         ];
+        $pro_count=0;
+        if ($request['leader_college']=='数学与信息学院'&&$request['leader_major']!='工业工程'&&$request['leader_major']!='统计学')
+            $pro_count++;
+        if ($request['member1_college']=='数学与信息学院'&&$request['member1_major']!='工业工程'&&$request['member1_major']!='统计学')
+            $pro_count++;
+        if ($request['member2_college']=='数学与信息学院'&&$request['member2_major']!='工业工程'&&$request['member2_major']!='统计学')
+            $pro_count++;
+        if ($request['member3_college']=='数学与信息学院'&&$request['member3_major']!='工业工程'&&$request['member3_major']!='统计学')
+            $pro_count++;
+        if ($request['member_num']/2<=$pro_count&&$request['group_type']=='非专业组'){
+            return back()->with('error','成员有一半或一半以上为IT类专业学生需选择专业组');
+        }
         $this->validate($request,[
             'leader_name'=>'required',
             'leader_number'=>'required',

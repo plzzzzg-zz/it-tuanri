@@ -18,6 +18,11 @@
             {!! session('status') !!}
         </div>
     @endif
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+        </div>
+    @endif
     {{Form::open(['url'=>'/group'])}}
     {!! Form::label('member_num','队伍人数：') !!}
     {!! Form::select('member_num',['1'=>'1','2'=>'2','3'=>'3','4'=>'4'],'4',['class'=>'form-control','onchange'=>'change_form(this.value)']) !!}
@@ -37,6 +42,10 @@
         <div class="panel panel-default" id="group_info" style="display: none">
             <div class="panel-body">
                 成员有一半或一半以上为IT类专业学生即算为专业组
+                <br>
+                <br>
+                注：①计算机科学与技术、软件工程、网络工程、信息管理与信息系统、信息与计算科学专业为IT类专业；②电子类（未分专业前）和其他专业为非IT类专业
+
             </div>
         </div>
         {!! Form::select('group_type', ['专业组'=>'专业组','非专业组'=>'非专业组'],null, ['class' => 'form-control']) !!}
