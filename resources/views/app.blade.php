@@ -90,7 +90,7 @@
 </head>
 <body>
 {{--nav--}}
-<nav class="navbar navbar-default" role="navigation" style="background:#369cf5">
+<nav class="navbar navbar-default" role="navigation" style="border:none;border-radius:0px;background:#369cf5">
     <div class="container-fluid" >
         <div class="navbar-header " >
             <a class="navbar-brand" href="{{url('/signup')}}" style="padding-top: 7px;">
