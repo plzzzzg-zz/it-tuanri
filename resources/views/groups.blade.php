@@ -8,14 +8,14 @@
             <tr>
                 <th>作品名字</th>
                 <th>组长</th>
-                <th>组长学号</th>
+                <th>队伍人数</th>
             </tr>
             </thead>
             @foreach($groups as $group)
                 <tr>
                     <td><a href="{{action('Controller@show',[$group->id])}}">{{$group->project_name}}</a></td>
                     <td>{{$group->leader_name}}</td>
-                    <td>{{$group->leader_id}}</td>
+                    <td>{{$group->member_num}}</td>
                 </tr>
                 @endforeach
         </table>
