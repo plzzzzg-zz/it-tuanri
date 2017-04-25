@@ -81,6 +81,7 @@
         }
         .form_no_border{
             border: none!important;
+            box-shadow: 0px 0px 0px!important;
         }
         .m{
             margin-top: 6px;
