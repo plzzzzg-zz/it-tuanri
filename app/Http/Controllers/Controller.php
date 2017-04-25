@@ -102,5 +102,9 @@ class Controller extends BaseController
             return redirect()->action('Controller@show',$group->id);
     }
 
+    public function index(){
+        $groups = Group::all();
+        return view('groups',compact('groups'));
+    }
 
 }
