@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 <th>作品名字</th>
+                <th>作品类型</th>
                 <th>组长</th>
                 <th>队伍人数</th>
             </tr>
