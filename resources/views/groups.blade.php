@@ -14,6 +14,7 @@
             @foreach($groups as $group)
                 <tr>
                     <td><a href="{{action('Controller@show',[$group->id])}}">{{$group->project_name}}</a></td>
+                    <td>{{$group->project_type}}</td>
                     <td>{{$group->leader_name}}</td>
                     <td>{{$group->member_num}}</td>
                 </tr>
