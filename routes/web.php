@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/signup','Controller@signup');
+// Route::get('/signup','Controller@signup');
 //Route::post('/store','Controller@store');
 //Route::get('/group/{id}/edit','Controller@edit');
 Route::post('/search','Controller@search');
